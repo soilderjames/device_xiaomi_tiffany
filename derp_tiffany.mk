@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,13 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from tiffany device
 $(call inherit-product, device/xiaomi/tiffany/device.mk)
 
-# Inherit some common sakura stuff.
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
-USE_PIXEL_CHARGING := true
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := tiffany
-PRODUCT_NAME := derp_tiffany
+PRODUCT_NAME := aosp_tiffany
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 5X
@@ -36,14 +35,16 @@ TARGET_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# DerpFest Specific Settings
-TARGET_BOOT_ANIMATION_RES := 1080
-USE_LEGACY_BOOTANIMATION := true
-DERP_BUILDTYPE := Official
-WITH_GMS := true
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="tiffany-user 8.0.0 OPR1.170623.026 8.1.10 release-keys"
+    PRIVATE_BUILD_DESC="tiffany-user 8.1.0 OPM1.171019.019 V10.2.3.0.ODBCNXM release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "xiaomi/tiffany/tiffany_sprout:8.0.0/OPR1.170623.026/8.1.10:user/release-keys"
+BUILD_FINGERPRINT := "xiaomi/tiffany/tiffany:8.1.0/OPM1.171019.019/V10.2.3.0.ODBCNXM:user/release-keys"
+
+# PixelExperience Stuffs
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_INCLUDE_STOCK_ARCORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_SUPPORTS_QUICK_TAP := true
