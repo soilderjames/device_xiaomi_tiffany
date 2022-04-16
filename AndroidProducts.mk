@@ -17,6 +17,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_tiffany.mk
 
 COMMON_LUNCH_CHOICES := \
-	derp_tiffany-user \
-	derp_tiffany-userdebug \
-	derp_tiffany-eng
+	aosp_tiffany-user \
+	aosp_tiffany-userdebug \
+	aosp_tiffany-eng
