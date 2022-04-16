@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_tiffany.mk
+    $(LOCAL_DIR)/aosp_tiffany.mk
 
 COMMON_LUNCH_CHOICES := \
 	derp_tiffany-user \
